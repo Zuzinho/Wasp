@@ -32,13 +32,13 @@
         {
             foreach(var pair in _repairBook)
             {
-                Console.WriteLine(string.Format("Spare part - {0}, year of replacement - {1}",pair.Key, pair.Value));
+                Console.WriteLine($"Spare part - {pair.Key}, year of replacement - {pair.Value}");
             }
         }
 
         public override string ToString()
         {
-            return base.ToString() + string.Format(", count of passengers - {0}",_passengersCount);
+            return base.ToString() + $", count of passengers - {_passengersCount}";
         }
     }
 }

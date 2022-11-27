@@ -25,16 +25,9 @@
 
         public void RemoveLoad(string loadName)
         {
-            try
+            if (!_currentLoad.Remove(loadName))
             {
-                if (!_currentLoad.Remove(loadName))
-                {
-                    Console.WriteLine("Error, no such load");
-                }
-            }
-            catch (Exception)
-            {
-
+                Console.WriteLine("Error, no such load");
             }
         }
 
@@ -48,7 +41,7 @@
 
         public override string ToString()
         {
-            return base.ToString() + string.Format(", max load capacity - {0}, full name of driver - {1}",_maxLoadCapacity,_driverFullName);
+            return base.ToString() + $", max load capacity - {_maxLoadCapacity}, full name of driver - {_driverFullName}";
         }
     }
 }

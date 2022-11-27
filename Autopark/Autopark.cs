@@ -5,19 +5,16 @@
         private string _autoparkName;
         private List<Car> _cars;
 
-        public Autopark(string autoparkName, List<Car> cars)
+        public Autopark(string autoparkName, params Car[] cars)
         {
             _autoparkName = autoparkName;
-            _cars = cars;
+            _cars = cars.ToList();
         }
 
         public override string ToString()
         {
-            string result = "";
-            foreach (Car car in _cars)
-            {
-                result += car.ToString() + '\n';
-            }
+            string result = $"Autopark {_autoparkName} contains:\n";
+            foreach (Car car in _cars) result += car.ToString() + '\n';
             return result;
         }
     }

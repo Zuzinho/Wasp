@@ -15,7 +15,7 @@
 
         public override string ToString()
         {
-            return string.Format("Car`s mark - {0}, power - {1}, year of production - {2}",mark,power,productionYear);
+            return $"Car`s mark - {mark}, power - {power}, year of production - {productionYear}";
         }
     }
 }
